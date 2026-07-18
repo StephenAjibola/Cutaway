@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0b;
+  --color-surface: #141416;
+  --color-line: #26262a;
+  --color-ink: #f5f4f2;
+  --color-mute: #8a8a8f;
+  --color-accent: #ff9f1c;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: rgb(255 159 28 / 0.25);
+}
+
+/* indeterminate scrub line for the loading state */
+.scrub-head {
+  animation: scrub 1.4s cubic-bezier(0.4, 0, 0.4, 1) infinite;
+}
+
+@keyframes scrub {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrub-head {
+    animation: none;
+    left: 0;
+    width: 100%;
+  }
+}
