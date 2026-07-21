@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Check, Copy, TriangleAlert } from 'lucide-react'
 import { SAMPLE_TRANSCRIPT } from './sample'
 
-const API = 'http://127.0.0.1:8000'
+const API = import.meta.env.VITE_API_URL
 const MIN_CHARS = 200
 const COUNTS = [3, 5, 8]
 
